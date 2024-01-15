@@ -188,7 +188,7 @@
             </table>
         </div>
         <ModalCreateObject v-if="showModal" @close="showModal = false" />
-        <ModalProofDelete v-if="deleteModal != -1" @close="deleteModal = -1" @proof="removeById(deleteModal)">выбранный объект #<b>{{ deleteModal }}</b>?</ModalProofDelete>
+        <ModalProofDelete v-if="deleteModal != -1" @close="deleteModal = -1" @proof="removeById(deleteModal)">выбранную недвижимость #<b>{{ deleteModal }}</b>?</ModalProofDelete>
     </section>
 </template>
 

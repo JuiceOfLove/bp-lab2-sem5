@@ -68,10 +68,12 @@
                   <input
                     id="Phone"
                     v-model="content.Phone"
-                    type="phone"
+                    type="tel"
                     class="form-control rounded-3"
+                    @input="validatePhone"
                   />
                   <label for="Phone">Телефон</label>
+                  <div v-if="!phoneValid" class="text-danger">Неверный формат телефона</div>
                 </div>
                 <div class="form-floating">
                   <input
@@ -79,8 +81,10 @@
                     v-model="content.Email"
                     type="email"
                     class="form-control rounded-3"
+                    @input="validateEmail"
                   />
                   <label for="Email">Email</label>
+                  <div v-if="!emailValid" class="text-danger">Неверный формат email</div>
                 </div>
                 <div
                   class="form-floating align-self-end d-flex justify-content-end"
@@ -205,6 +209,8 @@ export default {
   },
   data() {
     return {
+      phoneValid: true,
+      emailValid: true,
       editId: -1,
       showModal: false,
       openModal: -1,
@@ -224,7 +230,7 @@ export default {
   },
   computed: {
     isValidForm() {
-      return !!(this.content.Phone || this.content.Email);
+      return !!(this.content.Phone && this.phoneValid) || this.content.Email;
     },
     filteredClients() {
       if (this.search !== "") {
@@ -246,6 +252,24 @@ export default {
     },
   },
   methods: {
+    validatePhone() {
+    const phoneRegex = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+
+    this.phoneValid = phoneRegex.test(this.content.Phone);
+
+    if (!this.phoneValid) {
+      console.warn("Неверный формат телефона. Пожалуйста, введите корректный номер телефона.");
+    }
+  },
+  validateEmail() {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    this.emailValid = emailRegex.test(this.content.Email);
+
+    if (!this.emailValid) {
+      console.warn("Неверный формат email. Пожалуйста, введите корректный email.");
+    }
+  },
     isFuzzyMatch(str1, str2) {
       const distance = levenshteinDistance(str1, str2);
       return distance <= 3;
@@ -263,10 +287,15 @@ export default {
       this.content.Id = obj.Id;
     },
     saveChanges(id) {
+    this.validatePhone();
+    this.validateEmail();
+
+    if (this.phoneValid && this.emailValid) {
       this.editId = -1;
       useClientsStore().changeClient(id, this.content);
       console.log(id, this.content);
-    },
+    }
+  },
     cancelChanges() {
       this.editId = -1;
       this.content = {};

@@ -146,7 +146,7 @@
       v-if="deleteModal > -1"
       @close="deleteModal = -1"
       @proof="removeById(deleteModal)"
-      >выбранный объект #<b>{{ deleteModal }}</b
+      >выбранную сделку #<b>{{ deleteModal }}</b
       >?</ModalProofDelete
     >
   </section>
