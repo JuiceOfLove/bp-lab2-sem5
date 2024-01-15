@@ -3,9 +3,9 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content p-2 ">
                 <div class="modal-header">
-                    <h5 v-if="this.type=='client'" class="modal-title fw-bold mb-0 fs-4">Активность клиента {{this.id}}</h5>
-                    <h5 v-if="this.type=='agent'" class="modal-title fw-bold mb-0 fs-4">Активность риэлтора {{this.id}}</h5>
-                    <h5 v-if="this.type=='deal'" class="modal-title fw-bold mb-0 fs-4">Активность сделки {{this.id}}</h5>
+                    <h5 v-if="this.type=='client'" class="modal-title fw-bold mb-0 fs-4">Участие клиента {{this.id}}</h5>
+                    <h5 v-if="this.type=='agent'" class="modal-title fw-bold mb-0 fs-4">Участие риэлтора {{this.id}}</h5>
+                    <h5 v-if="this.type=='deal'" class="modal-title fw-bold mb-0 fs-4">Комиссии сделки {{this.id}}</h5>
                     <button type="button" class="btn btn-close" @click="$emit('close')"></button>
                 </div>
                 <div v-if="this.type !== 'deal'" class="modal-body">

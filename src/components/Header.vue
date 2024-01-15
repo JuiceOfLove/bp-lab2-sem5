@@ -30,13 +30,13 @@
 
 .nav-pills .nav-link {
   color: white;
-  background-color: #343a40; /* Background color for the nav-pills */
+  background-color: #2070bf; /* Background color for the nav-pills */
   margin: 0 5px;
   border-radius: 8px;
 }
 
 .nav-pills .nav-link:hover {
-  background-color: #495057; /* Background color on hover */
+  background-color: #105498; /* Background color on hover */
 }
 
 .nav-pills .nav-link.active {

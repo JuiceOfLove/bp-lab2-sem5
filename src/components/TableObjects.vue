@@ -11,7 +11,7 @@
                     <button type="button" @click="showModal = true"
                         class="d-inline-flex align-items-center btn px-4 nav-pills" data-bs-toggle="modal"
                         data-bs-target="#exampleModal"
-                        style="background-color: gray; color: white; border: gray;">
+                        style="background-color: #74aa0e; color: white; border: gray;">
                         Добавить недвижимость
                     </button>
                 </div>
@@ -179,7 +179,7 @@
                                 Изменить
                             </button>
                             <button class="btn-group__item" @click="deleteModal = object.Id" :disabled="checkId(object.Id, this.supplies)">
-                                Удаление
+                                Удалить
                             </button>
                         </div>
                     </td>
@@ -340,6 +340,13 @@ export default {
     margin-bottom: 20px;
 }
 
+.btn-group__item:hover {
+    background-color: rgb(72, 125, 217);
+    color: #ffffff;
+    width: 98%;
+    border-radius: 15px;
+}
+
 .form-floating {
     margin-bottom: 15px;
 
@@ -364,7 +371,7 @@ export default {
 .table {
     thead {
         th {
-            background-color: #343a40;
+            background-color: #105498;
             color: white;
         }
     }

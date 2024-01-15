@@ -1,5 +1,6 @@
 <template>
   <section class="clients">
+    <!-- <div class="container d-flex justify-content-center"></div> -->
     <div class="clients__wrapper p-4 table-responsive small">
       <div class="table-title d-flex justify-content-between mb-3">
         <h3 class="d-inline-flex">Потребности</h3>
@@ -9,7 +10,7 @@
           class="d-inline-flex align-items-center btn px-4 nav-pills"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
-          style="background-color: gray; color: white; border: gray;"
+          style="background-color: #74aa0e; color: white; border: gray;"
         >
           Добавить потребность
         </button>
@@ -199,12 +200,10 @@
                   v-model="content.MinPrice"
                   type="number"
                   class="form-control rounded-3"
+                  @input="validateMinPrice"
                 />
                 <label for="MinPrice" class="required">Минимальная цена</label>
-                <small for="MinPrice" class="form-text text-muted"
-                  >Минимальная цена должна быть целым положительным
-                  числом</small
-                >
+                <div v-if="minPriceError" class="text-danger">{{ minPriceError }}</div>
               </div>
               <div class="form-floating mb-3">
                 <input
@@ -213,12 +212,10 @@
                   v-model="content.MaxPrice"
                   type="number"
                   class="form-control rounded-3"
+                  @input="validateMaxPrice"
                 />
                 <label for="MaxPrice" class="required">Максимальная цена</label>
-                <small id="MaxPrice" class="form-text text-muted"
-                  >Максимальная цена должна быть целым положительным
-                  числом</small
-                >
+                <div v-if="maxPriceError" class="text-danger">{{ maxPriceError }}</div>
               </div>
               <div
                 class="mb-4 form-floating align-self-end d-flex justify-content-end"
@@ -242,11 +239,12 @@
         </div>
       </div>
     </div>
-    <div class="table__wrapper">
-      <table class="table table-striped shadow-sm">
+    
+    <div class="needs-table-container">
+      <table class="table table-sm table-striped shadow-sm">
         <thead>
           <tr>
-            <th scope="col" class="table__item">id</th>
+            <!-- <th scope="col" class="table__item">id</th>
             <th scope="col" class="table__item">Клиент</th>
             <th scope="col" class="table__item">Риэлтор</th>
             <th scope="col" class="table__item">Тип</th>
@@ -262,6 +260,10 @@
             <th scope="col" class="table__item">Макс. комнат</th>
             <th scope="col" class="table__item">Мин. этаж</th>
             <th scope="col" class="table__item">Макс. этаж</th>
+            <th scope="col" class="table__item">Действия</th> -->
+            <th v-for="column in tableColumns" :key="column.key" :class="column.class">
+              {{ column.label }}
+            </th>
             <th scope="col" class="table__item">Действия</th>
           </tr>
         </thead>
@@ -271,7 +273,12 @@
             :key="demand.Id"
             :class="{ 'table-info': demand.Id == editId }"
           >
-            <td class="table__item">
+          <td v-for="column in tableColumns" :key="column.key" :class="column.class">
+              <p class="table__input">
+                {{ getColumnValue(demand, column.key) }}
+              </p>
+          </td>
+            <!-- <td class="table__item">
               <p class="table__input">
                 {{ demand.Id }}
               </p>
@@ -350,25 +357,8 @@
               <p class="table__input">
                 {{ demand.MaxFloor }}
               </p>
-            </td>
+            </td> -->
             <td>
-              <!-- <div class="btn-group row">
-                <button
-                  style="width: 38px; height: 38px"
-                  class="mx-2 rounded-square p-2 lh-1 btn btn-outline-primary"
-                  @click="editById(demand.Id, demand)"
-                >
-                  <i class="bi-pencil-square"></i>
-                </button>
-                <button
-                  style="width: 38px; height: 38px"
-                  class="rounded-square p-2 lh-1 btn btn-danger"
-                  @click="deleteModal = demand.Id"
-                  :disabled="!demandInDeal(demand.Id)"
-                >
-                  <i class="bi-trash"></i>
-                </button>
-              </div> -->
               <div class="btn-group row">
                   <button
                   class="btn-group__item"
@@ -381,7 +371,7 @@
                   @click="deleteModal = demand.Id"
                   :disabled="!demandInDeal(demand.Id)"
                   >
-                  Удаление
+                  Удалить
                   </button>
               </div>
             </td>
@@ -416,6 +406,10 @@ export default {
   },
   data() {
     return {
+      minPrice: null,
+      maxPrice: null,
+      minPriceError: null,
+      maxPriceError: null,
       editId: -1,
       showModal: false,
       deleteModal: -1,
@@ -443,6 +437,18 @@ export default {
         MinFloor: "",
         MaxFloor: "",
       },
+      tableColumns: [
+        { key: "Id", label: "id", class: "table__item" },
+        { key: "ClientId", label: "Клиент", class: "table__item" },
+        { key: "AgentId", label: "Риэлтор", class: "table__item" },
+        { key: "Type", label: "Тип", class: "table__item" },
+        { key: "Address_City", label: "Город", class: "table__item" },
+        { key: "Address_Street", label: "Улица", class: "table__item" },
+        { key: "MinPrice", label: "Мин. цена", class: "table__item" },
+        { key: "MaxPrice", label: "Макс. цена", class: "table__item" },
+        { key: "MinArea", label: "Мин. площадь", class: "table__item" },
+        { key: "MaxArea", label: "Макс. площадь", class: "table__item" },
+      ],
     };
   },
   computed: {
@@ -455,6 +461,23 @@ export default {
     },
   },
   methods: {
+    validateMinPrice() {
+        if (this.minPrice !== null && (isNaN(this.minPrice) || this.minPrice < 0 || this.minPrice % 1 !== 0)) {
+            this.minPriceError = "Введите корректное положительное целое число";
+        } else {
+            this.minPriceError = null;
+        }
+    },
+    validateMaxPrice() {
+        if (this.maxPrice !== null && (isNaN(this.maxPrice) || this.maxPrice < 0 || this.maxPrice % 1 !== 0)) {
+            this.maxPriceError = "Введите корректное положительное целое число";
+        } else {
+            this.maxPriceError = null;
+        }
+    },
+    getColumnValue(demand, columnName) {
+      return demand[columnName];
+    },
     removeById(id) {
       useDemandsStore().removeDemand(id);
     },
@@ -512,13 +535,9 @@ export default {
   margin: 0 auto;
 }
 
-.table__wrapper {
-  width: 100%;
-  overflow: scroll;
-}
-
-.table {
-  width: 2400px;
+.needs-table-container {
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .table__button {
@@ -533,21 +552,21 @@ export default {
   background-color: rgb(169, 169, 169);
 }
 
-.clients__wrapper {
-    padding: 0 20px;
-    max-width: 1440px;
-    margin: 0 auto;
-}
-
 .row.g-2 {
     margin-bottom: 20px;
+}
+
+.btn-group__item:hover {
+  background-color: rgb(72, 125, 217);
+  color: #ffffff;
+  border-radius: 15px;
 }
 
 .form-floating {
     margin-bottom: 15px;
 
     label {
-        color: #343a40;
+        color: #3c4034;
     }
 
     input,
@@ -567,7 +586,7 @@ export default {
 .table {
     thead {
         th {
-            background-color: #343a40;
+            background-color: #105498;
             color: white;
         }
     }

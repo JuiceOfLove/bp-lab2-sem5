@@ -9,7 +9,7 @@
           class="d-inline-flex align-items-center btn px-4 nav-pills"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
-          style="background-color: gray; color: white; border: gray;"
+          style="background-color: #74aa0e; color: white; border: gray;"
         >
           Добавить сделку
         </button>
@@ -115,7 +115,7 @@
                   class="btn-group__item"
                   @click="openModal = deal.Id"
                 >
-                  Активность
+                  Комиссии
                 </button>
                 <button
                   class="btn-group__item"
@@ -127,7 +127,7 @@
                   class="btn-group__item"
                   @click="deleteModal = deal.Id"
                 >
-                  Удаление
+                  Удалить
                 </button>
               </div>
             </td>
@@ -275,11 +275,18 @@ export default {
     }
 }
 
+.btn-group__item:hover {
+  background-color: rgb(72, 125, 217);
+  color: #ffffff;
+  width: 98%;
+  border-radius: 15px;
+}
+
 /* Table Styles */
 .table {
     thead {
         th {
-            background-color: #343a40;
+            background-color: #105498;
             color: white;
         }
     }
