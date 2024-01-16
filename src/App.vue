@@ -1,5 +1,6 @@
 <template>
   <Header />
+  <div class="names">Команда 3, группа 211-323 - Пометун, Максимова, Цыбуленко, Молчанова, Сергеева</div>
   <router-view></router-view>
 </template>
 <script>
@@ -87,6 +88,11 @@ table td {
 
 input[type='number'] {
     -moz-appearance: textfield;
+}
+
+.names {
+  text-align: center;
+  font-size: 18px;
 }
 
 .btn-group__item {

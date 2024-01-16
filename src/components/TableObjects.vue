@@ -2,7 +2,7 @@
     <section class="clients">
         <div class="clients__wrapper p-4 table-responsive small">
             <div class="table-title d-flex justify-content-between mb-3">
-                <h3 class="d-inline-flex">Недвижимость</h3>
+                <h3 class="d-inline-flex">Объекты недвижимости</h3>
                 <div class="d-flex flex-row">
                     <form class="me-3" role="search">
                     <input v-model="search" type="search" class="form-control" placeholder="Поиск недвижимости"
@@ -242,7 +242,7 @@ export default {
         filteredObjects() {
             let arr = useObjectsStore().objects;
             arr = this.filterByType(arr);
-             if (this.district) {
+            if (this.district) {
                 arr = arr.filter((object) => object.District === this.district);
             }
             if (this.search !== '') {

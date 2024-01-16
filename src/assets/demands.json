@@ -1,7 +1,7 @@
 [
   {
       "Id": 1,
-      "Address_City": "Смоленск",
+      "Address_City": "Туапсе",
       "Type": "Квартира",
       "Address_Street": "Ленина",
       "Address_House": "",
@@ -19,7 +19,7 @@
   },
   {
       "Id": 2,
-      "Address_City": "Смоленск",
+      "Address_City": "Туапсе",
       "Type": "Дом",
       "Address_Street": "Пушкина",
       "Address_House": "",
@@ -37,7 +37,7 @@
   },
   {
       "Id": 3,
-      "Address_City": "Смоленск",
+      "Address_City": "Туапсе",
       "Type": "Дом",
       "Address_Street": "Гагарина",
       "Address_House": "",
@@ -55,7 +55,7 @@
   },
   {
       "Id": 4,
-      "Address_City": "Смоленск",
+      "Address_City": "Туапсе",
       "Type": "Земля",
       "Address_Street": "Толстого",
       "Address_House": "",
@@ -69,7 +69,7 @@
   },
   {
       "Id": 5,
-      "Address_City": "Смоленск",
+      "Address_City": "Туапсе",
       "Type": "Земля",
       "Address_Street": "Беляева",
       "Address_House": "",
@@ -83,7 +83,7 @@
   },
   {
       "Id": 6,
-      "Address_City": "Смоленск",
+      "Address_City": "Туапсе",
       "Type": "Квартира",
       "Address_Street": "Кирова",
       "Address_House": "",
@@ -101,7 +101,7 @@
   },
   {
       "Id": 7,
-      "Address_City": "Смоленск",
+      "Address_City": "Туапсе",
       "Type": "Квартира",
       "Address_Street": "Соболева",
       "Address_House": "",
@@ -119,7 +119,7 @@
   },
   {
       "Id": 8,
-      "Address_City": "Смоленск",
+      "Address_City": "Туапсе",
       "Type": "Квартира",
       "Address_Street": "Генерала Паскевича",
       "Address_House": "",
@@ -137,7 +137,7 @@
   },
   {
       "Id": 9,
-      "Address_City": "Смоленск",
+      "Address_City": "Туапсе",
       "Type": "Квартира",
       "Address_Street": "Солнечная",
       "Address_House": "",
@@ -155,7 +155,7 @@
   },
   {
       "Id": 10,
-      "Address_City": "Смоленск",
+      "Address_City": "Туапсе",
       "Type": "Квартира",
       "Address_Street": "Мира",
       "Address_House": "",
@@ -173,7 +173,7 @@
   },
   {
       "Id": 11,
-      "Address_City": "Смоленск",
+      "Address_City": "Туапсе",
       "Type": "Квартира",
       "Address_Street": "Лесная",
       "Address_House": "",
@@ -191,7 +191,7 @@
   },
   {
       "Id": 12,
-      "Address_City": "Смоленск",
+      "Address_City": "Туапсе",
       "Type": "Квартира",
       "Address_Street": "Победы",
       "Address_House": "",
@@ -209,7 +209,7 @@
   },
   {
       "Id": 13,
-      "Address_City": "Смоленск",
+      "Address_City": "Туапсе",
       "Type": "Квартира",
       "Address_Street": "Садовая",
       "Address_House": "",
@@ -227,7 +227,7 @@
   },
   {
       "Id": 14,
-      "Address_City": "Смоленск",
+      "Address_City": "Туапсе",
       "Type": "Квартира",
       "Address_Street": "Комсомольская",
       "Address_House": "",
@@ -245,7 +245,7 @@
   },
   {
       "Id": 15,
-      "Address_City": "Смоленск",
+      "Address_City": "Туапсе",
       "Type": "Квартира",
       "Address_Street": "Октябрьская",
       "Address_House": "",
@@ -263,7 +263,7 @@
   },
   {
       "Id": 16,
-      "Address_City": "Смоленск",
+      "Address_City": "Туапсе",
       "Type": "Квартира",
       "Address_Street": "Фрунзе",
       "Address_House": "",

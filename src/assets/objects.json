@@ -2,7 +2,7 @@
   {
   "Type": "Квартира",
   "Id": 1,
-  "Address_City": "Смоленск",
+  "Address_City": "Туапсе",
   "Address_Street": "Пушкина",
   "Address_House": 25,
   "Address_Number": 12,
@@ -16,7 +16,7 @@
   {
   "Type": "Квартира",
   "Id": 2,
-  "Address_City": "Смоленск",
+  "Address_City": "Туапсе",
   "Address_Street": "Лермонтова",
   "Address_House": 8,
   "Address_Number": 44,
@@ -30,7 +30,7 @@
   {
   "Type": "Квартира",
   "Id": 3,
-  "Address_City": "Смоленск",
+  "Address_City": "Туапсе",
   "Address_Street": "Гагарина",
   "Address_House": 139,
   "Address_Number": 6,
@@ -43,7 +43,7 @@
   {
   "Type": "Квартира",
   "Id": 4,
-  "Address_City": "Смоленск",
+  "Address_City": "Туапсе",
   "Address_Street": "Толстого",
   "Address_House": 189,
   "Address_Number": 5,
@@ -51,12 +51,13 @@
   "Coordinate_longitude": 0,
   "TotalArea": 50,
   "Rooms": 2,
+  "District": "Дорогобужский",
   "Floor": 7
   },
   {
   "Type": "Квартира",
   "Id": 5,
-  "Address_City": "Смоленск",
+  "Address_City": "Туапсе",
   "Address_Street": "Кирова",
   "Address_House": 110,
   "Address_Number": 99,
@@ -69,7 +70,7 @@
   {
   "Type": "Квартира",
   "Id": 6,
-  "Address_City": "Смоленск",
+  "Address_City": "Туапсе",
   "Address_Street": "Некрасова",
   "Address_House": 189,
   "Address_Number": 1,
@@ -77,12 +78,13 @@
   "Coordinate_longitude": 66.014590741,
   "TotalArea": 44,
   "Rooms": 2,
+  "District": "Дорогобужский",
   "Floor": 1
   },
   {
   "Type": "Квартира",
   "Id": 7,
-  "Address_City": "Смоленск",
+  "Address_City": "Туапсе",
   "Address_Street": "Северная",
   "Address_House": 22,
   "Address_Number": 1,
@@ -95,7 +97,7 @@
   {
   "Type": "Квартира",
   "Id": 8,
-  "Address_City": "Смоленск",
+  "Address_City": "Туапсе",
   "Address_Street": "Маяковского",
   "Address_House": 144,
   "Address_Number": 16,
@@ -103,24 +105,26 @@
   "Coordinate_longitude": 0,
   "TotalArea": 92,
   "Rooms": 3,
+  "District": "3 мкр",
   "Floor": 1
   },
   {
   "Type": "Дом",
   "Id": 9,
-  "Address_City": "Смоленск",
+  "Address_City": "Туапсе",
   "Address_Street": "Ленина",
   "Address_House": 25,
   "Address_Number": "",
   "Coordinate_latitude": 0,
   "Coordinate_longitude": 0,
   "TotalFloors": 2,
+  "District": "2 мкр",
   "TotalArea": 84.4
   },
   {
   "Type": "Дом",
   "Id": 10,
-  "Address_City": "Смоленск",
+  "Address_City": "Туапсе",
   "Address_Street": "Горького",
   "Address_House": null,
   "Address_Number": "",
@@ -132,7 +136,7 @@
   {
   "Type": "Дом",
   "Id": 11,
-  "Address_City": "Смоленск",
+  "Address_City": "Туапсе",
   "Address_Street": "Пушкинская",
   "Address_House": null,
   "Address_Number": "",
@@ -144,7 +148,7 @@
   {
   "Type": "Земля",
   "Id": 12,
-  "Address_City": "Смоленск",
+  "Address_City": "Туапсе",
   "Address_Street": "Красная",
   "Address_House": "",
   "Address_Number": "",
@@ -155,7 +159,7 @@
   {
   "Type": "Земля",
   "Id": 13,
-  "Address_City": "Смоленск",
+  "Address_City": "Туапсе",
   "Address_Street": "Советская",
   "Address_House": "",
   "Address_Number": "",
@@ -166,7 +170,7 @@
   {
   "Type": "Земля",
   "Id": 14,
-  "Address_City": "Смоленск",
+  "Address_City": "Туапсе",
   "Address_Street": "Октябрьская",
   "Address_House": "",
   "Address_Number": "",
